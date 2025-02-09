@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instaprint Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="../../assets/vendors/flag-icon-css/css/flag-icon.min.css" />
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/style.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 </head>
@@ -18,31 +24,31 @@
       <ul class="nav">
         <li class="nav-item" id="dashboard-item">
           <a href="#" class="nav-link" data-target="dashboard">
-            <i class="icon fas fa-tachometer-alt"></i>
+            <i style="color: white;" class="mdi mdi-home menu-icon"></i>
             <span class="nav-text">Dashboard</span>
           </a>
         </li>
         <li class="nav-item" id="settings-item">
           <a href="#" class="nav-link" data-target="settings">
-            <i class="fa-solid fa-print"></i>
-            <span class="nav-text">Printed Pages</span>
+            <i style="color: white;" class="mdi mdi-cached"></i>
+            <span class="nav-text">Activity Log</span>
           </a>
         </li>
         <li class="nav-item" id="profile-item">
           <a href="#" class="nav-link" data-target="profile">
-            <i class="fa-solid fa-file"></i>
+            <i style="color: white;" class="mdi mdi-file-check"></i>
             <span class="nav-text">Files Uploaded</span>
           </a>
         </li>
         <li class="nav-item" id="messages-item">
           <a href="#" class="nav-link" data-target="messages">
-            <i class="fa-solid fa-money-bill"></i>
+            <i style="color: white;" class="mdi mdi-coin"></i>
             <span class="nav-text">Balance</span>
           </a>
         </li>
         <li class="nav-item" id="logout-item">
           <a href="#" class="nav-link" data-target="logout">
-            <i class="fa-solid fa-star"></i>
+            <i style="color: white;" class="mdi mdi-star"></i>
             <span class="nav-text">Feedbacks</span>
           </a>
         </li>
@@ -50,16 +56,91 @@
     </div>
 
     <div class="main-content">
-      <button class="toggle-btn" id="toggle-btn"><i class="fa-solid fa-bars"></i>
+      <button class="toggle-btn" id="toggle-btn"><i class="mdi mdi-menu"></i>
       </button>
       <div class="content">
         <div class="page" id="dashboard-page">
           <h1>Dashboard Content</h1>
-          <p>Welcome to your dashboard!</p>
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Line chart</h4>
+                  <canvas id="lineChart" style="height: 250px;"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Bar chart</h4>
+                  <canvas id="barChart" style="height: 230px;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="page" id="settings-page">
-          <h1>Printed Pages</h1>
-          <p>Here you can adjust your settings.</p>
+          <h1>Activity Log</h1>
+          <div class="card">
+            <div class="card-body">
+              </p>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Profile</th>
+                      <th>VatNo.</th>
+                      <th>Created</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jacob</td>
+                      <td>53275531</td>
+                      <td>12 May 2017</td>
+                      <td>
+                        <label class="badge badge-danger">Pending</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Messsy</td>
+                      <td>53275532</td>
+                      <td>15 May 2017</td>
+                      <td>
+                        <label class="badge badge-warning">In progress</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>John</td>
+                      <td>53275533</td>
+                      <td>14 May 2017</td>
+                      <td>
+                        <label class="badge badge-info">Fixed</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Peter</td>
+                      <td>53275534</td>
+                      <td>16 May 2017</td>
+                      <td>
+                        <label class="badge badge-success">Completed</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Dave</td>
+                      <td>53275535</td>
+                      <td>20 May 2017</td>
+                      <td>
+                        <label class="badge badge-warning">In progress</label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="page" id="profile-page">
           <h1>Files Uploaded</h1>
@@ -78,5 +159,11 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/hoverable-collapse.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+    <script src="../../assets/js/chart.js"></script>
 </body>
 </html>

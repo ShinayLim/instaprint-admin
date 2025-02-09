@@ -4,10 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", serif !important;
 }
 
 body {
-  font-family: "Inter", serif;
+  font-family: "Inter", serif !important;
 }
 
 .dashboard {
@@ -17,7 +18,7 @@ body {
 
 .sidebar {
   width: 250px;
-  background-color: #3e1616;
+  background-color: #3e1616 !important;
   padding: 20px;
   transition: width 0.3s;
 }
@@ -45,6 +46,87 @@ body {
   color: black;
 }
 
+.nav-item.active a {
+  background-color: #220d0d; 
+  color: white; 
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+  border-radius: 10px;
+}
+
+
+  .nav-item {
+    cursor: pointer;
+  }
+  
+  .main-content {
+    position: relative;
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #6C1819;
+    color: white;
+  }
+  
+  /* Existing styles... */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar.collapsed .nav-text {
+  opacity: 0;
+}
+
+.sidebar.collapsed .nav-item {
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.sidebar.collapsed .nav-item i {
+  font-size: 22px; /* Adjusted size for collapsed state */
+  margin: 0;
+  display: block;
+  width: 100%; /* Ensure icons take full width for alignment */
+  text-align: center; /* Centering icons */
+}
+
+.sidebar .nav-item i {
+  font-size: 20px; /* Default size for icons when sidebar is expanded */
+  margin-right: 10px;
+}
+
+.sidebar.collapsed .nav-item .nav-text {
+  display: none; /* Hide text when collapsed */
+}
+
+.sidebar .nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  margin: 10px 0;
+  color: black;
+  transition: padding 0.3s;
+}
+
+/* Ensure that icons are always aligned */
+.sidebar .nav-item i {
+  font-size: 20px;
+  margin-right: 10px;
+  transition: font-size 0.3s ease;
+}
+
+/* Ensure no overlap on icons when collapsed */
+.sidebar.collapsed .nav-item i {
+  margin: 0; /* Remove any margin */
+  font-size: 22px; /* Slightly larger icons for collapsed state */
+}
+
+/* Ensure smooth transition */
+.sidebar.collapsed .nav-item {
+  transition: padding 0.3s;
+}
+
+
 .nav-item i {
   font-size: 20px;
   margin-right: 10px;
@@ -53,6 +135,7 @@ body {
 .nav-text {
   font-size: 16px;
   transition: opacity 0.3s;
+  color: beige;
 }
 
 .toggle-btn {
@@ -134,83 +217,3 @@ body {
     height: 30px;
   }
   
-  /* Add an active class style */
-.nav-item.active a {
-  background-color: #220d0d; 
-  color: white; 
-  width: 100%;
-  height: 50px;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-
-  .nav-item {
-    cursor: pointer;
-  }
-  
-  .main-content {
-    position: relative;
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #6C1819;
-    color: white;
-  }
-  
-  /* Existing styles... */
-.sidebar.collapsed {
-  width: 80px;
-}
-
-.sidebar.collapsed .nav-text {
-  opacity: 0;
-}
-
-.sidebar.collapsed .nav-item {
-  justify-content: center;
-  padding: 10px 0;
-}
-
-.sidebar.collapsed .nav-item i {
-  font-size: 22px; /* Adjusted size for collapsed state */
-  margin: 0;
-  display: block;
-  width: 100%; /* Ensure icons take full width for alignment */
-  text-align: center; /* Centering icons */
-}
-
-.sidebar .nav-item i {
-  font-size: 20px; /* Default size for icons when sidebar is expanded */
-  margin-right: 10px;
-}
-
-.sidebar.collapsed .nav-item .nav-text {
-  display: none; /* Hide text when collapsed */
-}
-
-.sidebar .nav-item {
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-  margin: 10px 0;
-  color: black;
-  transition: padding 0.3s;
-}
-
-/* Ensure that icons are always aligned */
-.sidebar .nav-item i {
-  font-size: 20px;
-  margin-right: 10px;
-  transition: font-size 0.3s ease;
-}
-
-/* Ensure no overlap on icons when collapsed */
-.sidebar.collapsed .nav-item i {
-  margin: 0; /* Remove any margin */
-  font-size: 22px; /* Slightly larger icons for collapsed state */
-}
-
-/* Ensure smooth transition */
-.sidebar.collapsed .nav-item {
-  transition: padding 0.3s;
-}
